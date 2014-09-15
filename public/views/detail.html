@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="media">
+                <div class="pull-left">
+                    <h4>{{hashtag.name}}</h4>
+                    <!--
+                    <button ng-click="delete()" class="btn btn-block btn-danger">
+                        <span class="glyphicon glyphicon-minus"></span> Delete
+                    </button>
+                    -->
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-body">
+            <div class="media">
+                <div class="alert alert-info" ng-repeat="tweet in hashtag.statuses">
+                    <div class="user">
+                        <img src="{{tweet.user.profile_image_url}}" class="user" alt="Avatar">
+                    </div>
+                    <p>{{tweet.user.screen_name}}</p>
+                    <p>{{tweet.text}}</p>
+                    <p>{{tweet.id_str}}</p>
+                </div>
+                <div class="text-center">
+                    <a href="/hashtags/{{hashtag.id}}?maxId={{hashtag.maxId}}">Load More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

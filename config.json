@@ -1,0 +1,22 @@
+{
+    "database": {
+        "protocol": "mysql",
+        "port": 3306,
+        "dbName": "hitwitter",
+        "master": {
+            "host": "localhost",
+            "user": "root",
+            "password": "root"
+        },
+        "pool": {
+            "maxConnections": 20,
+            "maxIdleTime": 30000
+        }
+    },
+    "cache": {
+
+    },
+    "app": {
+
+    }
+}
