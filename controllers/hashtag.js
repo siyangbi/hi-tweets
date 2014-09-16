@@ -34,15 +34,10 @@ module.exports = function(db) {
             hashtag = hashtag.values;
             var q = hashtag.name;
             var maxId = req.query.maxId || null;
-            console.log(req.query.maxId);
             db.Hashtag.getTweets(q, maxId, function(error, data) {
                hashtag.statuses = data.statuses;
                var lastTweet = data.statuses[data.statuses.length-1];
-               //hashtag.nextResults = data.search_metadata.next_results;
-               //hashtag.refreshUrl = data.search_metadata.refresh_url;
                hashtag.maxId = lastTweet.id - 1;
-               //hashtag.sinceId = 0;
-                //console.log(lastTweet);
                res.send(hashtag);
             });
         }).error(function (error) {
@@ -52,24 +47,11 @@ module.exports = function(db) {
     };
 
     Hashtag.update = function(req, res, next) {
-
-        var hashtag =
-        {
-            id: 123,
-            name:'apple'
-        };
-
-        res.send(hashtag);
+        //@todo
     };
 
     Hashtag.destroy = function(req, res, next) {
-        var hashtag =
-        {
-            id: 123,
-            name:'apple'
-        };
-
-        res.send(hashtag);
+        //@todo
     };
 
     return Hashtag;

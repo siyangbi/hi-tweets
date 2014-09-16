@@ -32,9 +32,6 @@ module.exports = function (sequelize, DataTypes) {
                     params.max_id = maxId - 1;
                 }
 
-
-                console.log(params);
-
                 T.get('search/tweets', params, function(err, data, response) {
                     callback(null, data);
                 });

@@ -54,13 +54,9 @@ fs.readdirSync(__dirname + '/routes/v1').forEach(function (file) {
 });
 
 
-app.use('/', router);
-
-app.get('*', function(req, res) {
-    console.log("herere");
+app.use('*', function(req, res) {
     res.redirect('/#' + req.originalUrl);
 });
-
 
 app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));

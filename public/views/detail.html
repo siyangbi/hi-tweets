@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="panel-body">
+        <!--div class="panel-body">
             <div class="media">
                 <div class="alert alert-info" ng-repeat="tweet in hashtag.statuses">
                     <div class="user">
@@ -27,6 +27,29 @@
                     <a href="/hashtags/{{hashtag.id}}?maxId={{hashtag.maxId}}">Load More</a>
                 </div>
             </div>
+        </div-->
+
+        <div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1'>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="alert alert-info" ng-repeat="tweet in tweets">
+                        <div class="user">
+                            <img src="{{tweet.user.profile_image_url}}" class="user" alt="Avatar">
+                        </div>
+                        <p>{{tweet.user.screen_name}}</p>
+                        <p>{{tweet.text}}</p>
+                        <p>{{tweet.id_str}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center" ng-show='busy'>
+                <div>Loading data...</div>
+            </div>
         </div>
+
+
+
+
     </div>
 </div>
