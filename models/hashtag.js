@@ -1,10 +1,11 @@
 var Twit = require('twit');
+var config = require('../config.json');
 
 var T = new Twit({
-    consumer_key:         '',
-    consumer_secret:      '',
-    access_token:         '',
-    access_token_secret:  ''
+    consumer_key:         config.twitter.consumer_key,
+    consumer_secret:      config.twitter.consumer_secret,
+    access_token:         config.twitter.access_token,
+    access_token_secret:  config.twitter.access_token_secret
 });
 
 
@@ -23,7 +24,6 @@ module.exports = function (sequelize, DataTypes) {
                 var params = {
                     q: q,
                     result_type: 'recent',
-                    since: '2011-11-11',
                     count: 10,
                     lang: 'en'
                 };

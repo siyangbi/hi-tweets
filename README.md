@@ -5,7 +5,7 @@ Intro
 --------
 Capture relevant tweets using hash tags, @ and free text
 
-Tech stack
+Tech
 --------
 - Nodejs
 - Sequelize
@@ -17,3 +17,10 @@ Tech stack
 - Gulp
 - Sass
 
+
+Tech
+--------
+- npm install
+- create db hitwitter in mysql
+- fill the config file with correct setting
+- node server.js

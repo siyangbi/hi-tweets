@@ -13,36 +13,30 @@
             </div>
         </div>
 
-        <!--div class="panel-body">
-            <div class="media">
-                <div class="alert alert-info" ng-repeat="tweet in hashtag.statuses">
-                    <div class="user">
-                        <img src="{{tweet.user.profile_image_url}}" class="user" alt="Avatar">
-                    </div>
-                    <p>{{tweet.user.screen_name}}</p>
-                    <p>{{tweet.text}}</p>
-                    <p>{{tweet.id_str}}</p>
-                </div>
-                <div class="text-center">
-                    <a href="/hashtags/{{hashtag.id}}?maxId={{hashtag.maxId}}">Load More</a>
-                </div>
-            </div>
-        </div-->
-
         <div infinite-scroll='nextPage()' infinite-scroll-disabled='busy' infinite-scroll-distance='1'>
+
+
             <div class="panel-body">
                 <div class="media">
                     <div class="alert alert-info" ng-repeat="tweet in tweets">
-                        <div class="user">
-                            <img src="{{tweet.user.profile_image_url}}" class="user" alt="Avatar">
+
+                        <div class="content">
+                            <div class="stream-item-header">
+
+                                <a class="account-group js-account-group js-action-profile js-user-profile-link js-nav" href="https://twitter.com/{{tweet.user.screen_name}}" target="_blank">
+                                    <img class="avatar js-action-profile-avatar" src="{{tweet.user.profile_image_url}}" alt="">
+                                    <strong class="fullname js-action-profile-name show-popup-with-id">{{tweet.user.name}}</strong>
+                                    <span>‏</span><span class="username js-action-profile-name">@<b>{{tweet.user.screen_name}}</b></span>
+                                </a>
+                            </div>
                         </div>
-                        <p>{{tweet.user.screen_name}}</p>
+
                         <p>{{tweet.text}}</p>
-                        <p>{{tweet.id_str}}</p>
                     </div>
 
                 </div>
             </div>
+
             <div class="text-center" ng-show='busy'>
                 <div>Loading data...</div>
             </div>

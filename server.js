@@ -17,9 +17,8 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
 var config = require('./config.json');
+
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize(config.database.dbName, config.database.master.user, config.database.master.password, {
     dialect: config.database.protocol,
