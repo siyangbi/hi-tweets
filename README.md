@@ -23,4 +23,5 @@ Tech
 - npm install
 - create db hitwitter in mysql
 - fill the config file with correct setting
+- node bin/sync.js
 - node server.js
